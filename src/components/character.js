@@ -1,26 +1,32 @@
 import React from "react";
+import { Icon } from 'semantic-ui-react';
 
-import { Card } from "../styledComponents"
+import { Card, CardBody, CardTitle, CardMeta, CardFooter } from "../styledComponents"
+
 
 const Character = props => {
     return (
         <Card>
             <img src={props.character.image} alt={props.character.name} />
-            <div className="card-body">
-                <h5 className="card-title">{props.character.name}</h5>
-                <div className="card-meta">
-                    {props.character.species} {props.character.status}
-                </div>
+            <CardBody>
+                <CardTitle>{props.character.name}</CardTitle>
+                <CardMeta>
+                    <p>{props.character.species}</p>
+                    <p>{props.character.status}</p>
+                </CardMeta>
                 <p className="card-description">
+                    <Icon name='map marker alternate' size='large' color='orange'/> 
                     {props.character.location.name}
                 </p>
                 <p className="card-description">
-                    {props.character.origin.name}
+                    <Icon name='globe' size='large' color='orange' />  {props.character.origin.name}
                 </p>
-            </div>
-            <div className="card-footer">
-                {props.character.episode.length}
-            </div>
+            </CardBody>
+            <CardFooter>
+                <p>
+                    <Icon name='video' size='large' color='orange' /> {props.character.episode.length}
+                </p>
+            </CardFooter>
         </Card>
     )
 }
