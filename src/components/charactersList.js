@@ -6,38 +6,44 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { getData } from '../actions'
 import Character from './character';
 
+import { CardList, Button, CardsContainer } from "../styledComponents"
+
 
 const CharatersList = props => {
 
     return (
-        <div className="cards-container">
-            <button onClick={props.getData}>
+        <CardList >
+            <h2>Welcome!</h2>
+            <p className="center">Venture forth at your own risk</p>
+            <Button onClick={props.getData}>
                 {props.isLoading ? (
                     <Loader type="TailSpin"
                         color="#181ed2"
                         height={80}
                         width={80} />
-                ) : ('Get Character Data')
+                ) : ('Character Portal')
                 }
-            </button>
-            {props.character &&
-                props.character.map(char => 
-                <Character 
-                        key={char.id}
-                        character={char}
+            </Button>
+            <CardsContainer>
+                {props.character &&
+                    props.character.map(char =>
+                        <Character
+                            key={char.id}
+                            character={char}
                         />)}
-        </div>
+            </CardsContainer>
+        </CardList>
     )
-    
+
 }
 
 const mapStateToProps = state => {
     // console.log('charactersList', state.characters)
     return {
-        
+
         character: state.characters,
         isLoading: state.isLoading
     }
 }
 
-export default connect(mapStateToProps, {getData})(CharatersList);
+export default connect(mapStateToProps, { getData })(CharatersList);

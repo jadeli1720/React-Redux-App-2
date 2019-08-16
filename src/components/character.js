@@ -1,8 +1,10 @@
 import React from "react";
 
+import { Card } from "../styledComponents"
+
 const Character = props => {
     return (
-        <div className="card">
+        <Card>
             <img src={props.character.image} alt={props.character.name} />
             <div className="card-body">
                 <h5 className="card-title">{props.character.name}</h5>
@@ -10,16 +12,16 @@ const Character = props => {
                     {props.character.species} {props.character.status}
                 </div>
                 <p className="card-description">
-                {props.character.location.name}
+                    {props.character.location.name}
                 </p>
                 <p className="card-description">
-                {props.character.origin.name}
+                    {props.character.origin.name}
                 </p>
             </div>
             <div className="card-footer">
-            {props.character.episode.length}
+                {props.character.episode.length}
             </div>
-        </div>
+        </Card>
     )
 }
 

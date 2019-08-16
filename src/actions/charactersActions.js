@@ -9,7 +9,7 @@ export const FETCH_CHAR_DATA_FAILURE = 'FETCH_CHAR_DATA_FAILURE';
 export const getData = () => {
     return dispatch => {
         dispatch({ type:'FETCH_CHAR_DATA_START' });
-        axios.get('')
+        axios.get('https://rickandmortyapi.com/api/character/')
         .then(res => {
             //res.data
             dispatch({ type:'FETCH_CHAR_DATA_SUCCESS', payload: res.data.results});
