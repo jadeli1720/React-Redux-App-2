@@ -18,10 +18,10 @@ const CharatersList = props => {
             <p className="center">Venture forth at your own risk</p>
             <Button onClick={props.getData}><Icon name="users"/> 
                 {props.isLoading ? (
-                    <Loader type="TailSpin"
-                        color="#181ed2"
-                        height={80}
-                        width={80} />
+                    <Loader type="ThreeDots"
+                        color="#ff7930"
+                        height={40}
+                        width={40} />
                 ) : ('Character Portal')
                 }
             </Button>
