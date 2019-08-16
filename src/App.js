@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 
+import Header from './components/header';
 import CharatersList from './components/charactersList'
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Rick & Morty Universe</h1>
+      <Header />
       <CharatersList />
     </div>
   );

@@ -1,10 +1,17 @@
 import React from "react";
 
-const Header = () =>{
-    return (
-        <div className= "header">
+import { Jumbotron, JumboTitle, titleWrapper } from "../styledComponents"
 
-        </div>
+
+const Header = () => {
+    return (
+        <Jumbotron>
+            <titleWrapper>
+                <JumboTitle>Rick & Morty Universe</JumboTitle>
+            </titleWrapper>
+        </Jumbotron>
     )
 
 }
+
+export default Header;

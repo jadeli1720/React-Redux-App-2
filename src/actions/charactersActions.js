@@ -5,11 +5,11 @@ export const FETCH_CHAR_DATA_SUCCESS = 'FETCH_CHAR_DATA_SUCCESS';
 export const FETCH_CHAR_DATA_FAILURE = 'FETCH_CHAR_DATA_FAILURE';
 
 //Action Creator with asynchronous actions
-//https://rickandmortyapi.com/api/character//
+//https://rickandmortyapi.com/api/character/
 export const getData = () => {
     return dispatch => {
         dispatch({ type:'FETCH_CHAR_DATA_START' });
-        axios.get('https://rickandmortyapi.com/api/character/')
+        axios.get('')
         .then(res => {
             //res.data
             dispatch({ type:'FETCH_CHAR_DATA_SUCCESS', payload: res.data.results});
